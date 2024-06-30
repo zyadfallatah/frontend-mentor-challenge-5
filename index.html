@@ -13,9 +13,9 @@
 
   <script type="module" src="src/index.ts" defer></script>
 </head>
-<body>  
+<body class="grid place-items-center lg:min-h-svh bg-slat-100 lg:p-20">  
   
-  <main class="lg:p-4 xl:p-28 lg:grid grid-cols-2 justify-center items-center min-h-dvh gap-8">
+  <main class="bg-white lg:grid grid-cols-2 justify-center items-center gap-8 rounded-2xl max-w-[1280px]">
     <form action="#" class="md: min-w-[50%] h-full p-6">
       <div class="md:flex md:items-center md:justify-between">
         <h1 class="text-slat-900 text-2xl font-bold mb-2">
@@ -86,12 +86,12 @@
       </button>  
     </form>
 
-    <div id="result" class="bg-slat-900 h-full p-6 lg:grid lg:place-items-center lg:rounded-r-3xl lg:rounded-bl-[20%] xl:p-8">
+    <div id="result" class="bg-slat-900 h-full p-6 lg:grid lg:place-items-center lg:rounded-r-3xl lg:rounded-bl-[20%] xl:p-4">
       <!-- Empty results start -->
       <div class="active">
         <img src="./assets/images/illustration-empty.svg" alt="" class="mx-auto">
         <h2 class="text-2xl lg:text-3xl text-white text-center font-medium my-4">Results shown here</h2>
-        <p class="text-l text-slat-300 text-center mt-2 px-20 mx-auto">
+        <p class="text-l text-slat-300 text-center mt-2 px-16 mx-auto">
           Complete the form and click “calculate repayments” to see what 
           your monthly repayments would be.
         </p>
