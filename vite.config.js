@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/zyadfallatah.github.io/"
+  base: "/frontend-mentor-challenge-5/",
 })
