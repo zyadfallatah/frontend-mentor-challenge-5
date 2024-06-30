@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="src/style.css">
+
+  <script type="module" src="src/index.ts" defer></script>
+</head>
+<body>  
+  
+  <main class="lg:p-4 xl:p-28 lg:grid grid-cols-2 justify-center items-center min-h-dvh gap-8">
+    <form action="#" class="md: min-w-[50%] h-full p-6">
+      <div class="md:flex md:items-center md:justify-between">
+        <h1 class="text-slat-900 text-2xl font-bold mb-2">
+          Mortgage Calculator
+        </h1>
+        <a id="clear" href="#" class="text-slat-700 hover:text-slat-900 underline block mb-2">
+          Clear All
+        </a>
+      </div>
+      
+      <div class="mb-5">
+        <label for="amount" class="text-slat-700">
+          Mortgage Amount
+          <div id="read" class="relative flex items-center w-full border border-slat-500 rounded-[4px] mt-2 hover:border-slat-900
+          after:absolute after:content-['This_field_is_required'] text-sm after:top-12 after:text-red after:hidden">
+            <span class="input-icon font-serif">£</span>
+  
+            <input class="mt-1 p-2 w-full rounded-l-none focus:outline-none pl-4 text-lg font-bold" type="number" name="term">
+          </div>
+        </label>
+      </div>
+      
+      <div class="md:flex items-center gap-4">
+        <div class="mb-5 flex-1">
+          <label for="amount" class="text-slat-700">
+            Mortgage Term
+            <div id="read" class="relative flex items-center w-full border border-slat-500 rounded-[4px] flex-row-reverse mt-2 hover:border-slat-900
+            after:absolute after:content-['This_field_is_required'] text-sm after:top-12 after:text-red after:hidden after:left-0">
+              <span class="input-icon">years</span>
+    
+              <input class="mt-1 p-2 w-full rounded-l-none focus:outline-none pl-4 text-lg font-bold" type="number" name="term">
+            </div>
+          </label>
+        </div>
+        
+        <div class="mb-5 flex-1">
+          <label for="amount" class="text-slat-700">
+            Mortgage Amount
+            <div id="read" class="relative flex flex-row-reverse items-center w-full border border-slat-500 rounded-[4px] mt-2 hover:border-slat-900 
+            after:absolute after:content-['This_field_is_required'] text-sm after:top-12 after:text-red after:hidden after:left-0">
+              <span class="input-icon">%</span>
+    
+              <input class=" p-2 w-full rounded-l-none focus:outline-none pl-4 text-lg font-bold" type="number" name="term">
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="relative after:absolute after:content-['This_field_is_required'] text-sm after:top-full after:text-red after:hidden">
+        <h2 for="type">Mortgage Type</h2>
+
+        <input type="radio" name="type" id="repay" class="appearance-none">
+        <label for="repay" class="special-radio flex items-center">
+          <span for="repay" class="text-slat-900 text-xl font-bold ml-4">Repayment</span>
+        </label>
+
+        <input type="radio" name="type" id="interest" class="appearance-none">
+        <label for="interest" class="special-radio flex items-center">
+          <span class="text-slat-900 text-xl font-bold ml-4">Interest Only</span>
+        </label>
+      </div>
+      
+      <button class="flex justify-center items-center w-full gap-3 my-4
+      bg-lime text-slat-900 rounded-full py-[13px] text-lg font-bold
+      md:max-w-fit md:px-12 md:mt-8 xl:text-2xl hover:opacity-80" >
+        <img src="./assets/images/icon-calculator.svg" alt="calculator image">
+        Calculate Repayments
+      </button>  
+    </form>
+
+    <div id="result" class="bg-slat-900 h-full p-6 lg:grid lg:place-items-center lg:rounded-r-3xl lg:rounded-bl-[20%] xl:p-8">
+      <!-- Empty results start -->
+      <div class="active">
+        <img src="./assets/images/illustration-empty.svg" alt="" class="mx-auto">
+        <h2 class="text-2xl lg:text-3xl text-white text-center font-medium my-4">Results shown here</h2>
+        <p class="text-l text-slat-300 text-center mt-2 px-20 mx-auto">
+          Complete the form and click “calculate repayments” to see what 
+          your monthly repayments would be.
+        </p>
+      </div>
+    <!-- Empty results end -->
+
+      
+    <!-- Completed results start -->
+      <div class="hidden p-2">
+        <h2 class="text-2xl text-white mb-4 font-medium">
+          Your results
+        </h2>
+        
+        <p class="text-slat-300 mb-2 md:text-lg">
+          Your results are shown below based on the information you provided. 
+          To adjust the results, edit the form and click “calculate repayments” again.
+        </p>
+
+        <div class="bg-[#0b1d28] border-t-[3px] border-lime rounded-lg p-4 xl:p-8 py-6 mt-4">
+          <div class="border-b border-slat-300 pb-4 md:pb-8">
+            <h3 class="text-slat-300 mb-1 xl:text-lg">Your monthly repayments</h3>
+            <p id="repayment" class="text-2xl md:text-5xl xl:text-7xl text-lime font-bold">$0.0</p>
+          </div>
+          <div class="mt-4 md:mt-8">
+            <h3 class="text-slat-300 mb-1 xl:text-lg">Total you'll repay over the term</h3>
+            <p id="total-repayment" class="text-white text-lg font-bold md:text-xl xl:text-3xl">$0</p>
+          </div>
+        </div>
+      
+      
+    <!-- Completed results end -->
+      </div>
+    </div>
+  </main>
+
+  
+</body>
+</html>

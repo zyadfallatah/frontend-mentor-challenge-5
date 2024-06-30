@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "PlusJakartaSans";
+  src: url("./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf");
+}
+
+@layer components {
+  .special-radio {
+    @apply border rounded-[4px] p-4 border-slat-500 before:w-4 before:h-4 
+    before:bg-white before:checked:bg-lime before:rounded-full before:border-white 
+    before:outline-slat-500 before:outline before:border-2 before:outline-1 hover:cursor-pointer hover:border-lime
+  }
+  .input-icon {
+    @apply flex justify-center items-center min-w-12 min-h-12 bg-slat-100 rounded-l-[4px] py-2 px-6 
+    font-bold text-xl
+  }
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+input[type="radio"]:checked + label {
+  background-color: hsl(61, 70%, 52%, 10%);
+  border-color: hsl(61, 70%, 52%);
+}
+
+input[type="radio"]:checked + label::before {
+  background-color: hsl(61, 70%, 52%);
+  outline-color: hsl(61, 70%, 52%);
+}
